@@ -7,20 +7,21 @@
 "use strict"
 
 window.onload = function () {
+  // this calculates volume of a sphere
 
   const params = new URLSearchParams(document.location.search)
 
-  // input
-  const radius = params.get("radius")
+  //
+  let radius = params.get("radius")
+  if (radius == null) {
+    radius = 0
+  }
 
   // process
-  const volume = 4 / 3 * Math.PI * radius ** 3
-  const dimensions =
-    "<ul>\n<li>radius = " +
-    radius +
-    "</li>\n</ul>"
+  const notRoundedVolume = 4 / 3 * Math.PI * radius ** 3
+  const roundedVolume = Math.round(notRoundedVolume * 100) /100
 
   // output
-  document.getElementById("dimensions").innerHTML = dimensions
-  document.getElementById("volume").innerHTML = "volume is: " + volume.toFixed(3) + " mm³"
+  document.getElementById("radius").innerHTML = "<p>The radius = " + radius + " cm</p>"
+  document.getElementById("volume").innerHTML = "<p>The volume is: " + roundedVolume + " cm³</p>"
 }
