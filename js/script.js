@@ -5,7 +5,9 @@
 // This file contains the JS functions for index.html
 
 "use strict"
-
+/**
+ * This function allows user to get volume by changing url
+ */
 window.onload = function () {
   // this calculates volume of a sphere
 
