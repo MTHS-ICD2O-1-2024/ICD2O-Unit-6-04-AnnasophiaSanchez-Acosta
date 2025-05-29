@@ -12,7 +12,7 @@ window.onload = function () {
   const params = new URLSearchParams(document.location.search)
 
   //
-  let radius = params.get("radius")
+  let radius = params.get("Radius")
   if (radius == null) {
     radius = 0
   }
